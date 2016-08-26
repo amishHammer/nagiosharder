@@ -36,7 +36,7 @@ class NagiosHarder
       @default_cookies = {}
       @version = version
       debug_output if ENV['DEBUG']
-      basic_auth(@user, @password) if @user && @password
+      digest_auth(@user, @password) if @user && @password
       @nagios_time_format = case nagios_time_format
                             when 'us'
                               "%m-%d-%Y %H:%M:%S"
